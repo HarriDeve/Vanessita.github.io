@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños, Mi Amor! 🎉</title>
+  <!-- Agregar enlace a Bootstrap desde CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Agregar SweetAlert2 desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #6a1b9a, #9c27b0); /* Fondo morado degradado */
+      font-family: 'Arial', sans-serif;
+      color: white;
+      position: relative;
+    }
+    /* Imagen de BTS más grande */
+    .bts-logo {
+      width: 50%; /* Ajusta el tamaño según necesites */
+      max-width: 1000px; /* Tamaño máximo */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    /* Título en arco */
+    .arco-titulo {
+      position: relative;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+      color: transparent; /* Deja el texto transparente */
+      background: linear-gradient(135deg, #000000, #6a037c);
+      background-clip: text;
+      -webkit-background-clip: text; /* Solo para navegadores compatibles */
+      font-weight: bold;
+      animation: bounceIn 1s ease-in-out;
+      letter-spacing: 2px;
+    }
+
+    /* Animación para el título */
+    @keyframes bounceIn {
+      0% { transform: translateY(-1000px); }
+      60% { transform: translateY(30px); }
+      80% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Estilo general para las cards */
+    .card {
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      background-color: #fff;
+      color: #333;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card-body {
+      background-color: #fff;
+      border-top: 3px solid #9c27b0;
+    }
+    .card-title {
+      font-size: 1.5rem;
+      color: #6a1b9a;
+    }
+    .card-text {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    /* Botón personalizado */
+    .btn-custom {
+      background-color: #9c27b0;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .btn-custom:hover {
+      background-color: #6a1b9a;
+    }
+
+    /* Animación de entrada para las cards */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Fondo oscuro para expandir cards */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      display: none;
+    }
+
+    /* Estilo especial para la tarjeta ampliada */
+    .card.expanded {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.2);
+      z-index: 1000;
+    }
+
+    /* Globos en los laterales */
+      .balloons {
+      position: fixed;
+      top: 0;
+      width: 150px; /* Tamaño de los globos */
+      height: auto;
+      z-index: 10;
+      }
+
+    .balloons-left {
+      left: 0;
+    }
+
+    .balloons-right {
+      right: 0;
+      transform: scaleX(-1); /* Invierte la imagen para reflejarla */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Globos decorativos -->
+  <img src="https://static.vecteezy.com/system/resources/previews/013/169/211/non_2x/balloons-party-illustration-free-png.png" alt="Globos izquierda" class="balloons balloons-left">
+  <img src="https://static.vecteezy.com/system/resources/previews/013/169/211/non_2x/balloons-party-illustration-free-png.png" alt="Globos derecha" class="balloons balloons-right">
+
+
+  <!-- Capa de fondo opaco -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Contenedor principal -->
+  <div class="container my-5">
+    <div class="text-center position-relative mb-4">
+      <h1 class="arco-titulo">¡Feliz Cumpleaños!</p></h1>
+      <!-- Imagen de BTS -->
+      <img src="img/BTS_fondo.png" alt="Logo BTS" class="bts-logo">
+    </div>
+
+    <!-- Cards de momentos especiales -->
+    <div class="row justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-md-3 mb-4 fade-in">
+        <div class="card">
+          <img src="img/Gato_Corazon}.jpg" class="card-img-top" alt="Gato_Corazon">
+          <div class="card-body">
+            <h5 class="card-title">Primero que nada espero haber sido la primera personita en desearte un ¡Feliz Cumpleaños! </h5>
+            <p class="card-text">Vanessita, quiero desearte un muy lindo día, que te vaya super en todo y que tu turno se pase super rapido para que la cumpleañera pueda vivir su día al maximo, recuerda que eres una persona maravillosa que merece el mundo entero y muchas cositas más, ojala y te llenen de abracitos y te den un tremendo pastel 💞</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-3 mb-4 fade-in">
+        <div class="card">
+          <img src="img/Nuesyta_Fotito.jpg" class="card-img-top" alt="Nuestra Fotito">
+          <div class="card-body">
+            <h5 class="card-title">Nuestra Fotito</h5>
+            <p class="card-text">Bueno, solo te queria agradecer por ser una personita tan genial y linda, realmente en este mes que llevamos me ha encantado conocerte, salir y entablar cositas contigo, en lo personal ha sido de lo mejor y te deseo todo lo mejor del mundo pq te lo mereces:3, Gracias por compartir un pedacito de tu vida conmigo <333 </p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-3 mb-4 fade-in">
+        <div class="card">
+          <img src="img/Gato_Corazones2.jpeg" class="card-img-top" alt="Imagen 2">
+          <div class="card-body">
+            <h5 class="card-title">Por Ultimo</h5>
+            <p class="card-text">No más por ultimo te quiero mandar un juerte apapacho, dile a Kasu que tambien le mando uno a ella y que por fa, te llene de abracitos y mimos de mi parte que ando lejos jsjsjsjs, ahora si, como ultimo acto por fa dale click al botón de abajito para una sopresa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón para mensaje de cumpleaños -->
+    <div class="text-center mt-5">
+      <button class="btn-custom" id="cumpleanosBtn">¡Boton de la Magia! 💜</button>
+    </div>
+  </div>
+
+  <audio src="img/House_Cards.mp3" autoplay></audio>
+
+  <!-- Scripts -->
+  <script>
+    // Botón con alerta
+    document.getElementById("cumpleanosBtn").addEventListener("click", function () {
+      Swal.fire({
+        title: '¡Feliz Cumpleaños! 🎂',
+        text: 'Te deseo un cumpleaños lleno de amor y alegría. Como parte de darle al botón haz sido  seleccionada para un regalo misterioso, WAOS, que sera? en todo caso es algo pequeñito que mire por ahi y me hizo ilusion preparartelo para este día, no más dime cuando tienes un tiempito y salimos y ahi si te doy un cumple atrasado pero bueno jsjsjs 💜',
+        icon: 'success',
+        confirmButtonText: '¡Gracias! 🎉',
+        background: '#fffbf2',
+        color: '#9c27b0',
+        confirmButtonColor: '#9c27b0',
+      });
+    });
+
+    audioElement.play();
+  </script>
+</body>
+</html>
